@@ -251,18 +251,18 @@ module "wafv2" {
 ## Requirements
 
 | Name | Version |
-| ---- | ------- |
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0.0 |
 ## Providers
 
 | Name | Version |
-| ---- | ------- |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.52.0 |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0.0 |
 ## Resources
 
 | Name | Type |
-| ---- | ---- |
+|------|------|
 | [aws_wafv2_ip_set.allow](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_ip_set) | resource |
 | [aws_wafv2_ip_set.block](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_ip_set) | resource |
 | [aws_wafv2_web_acl.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/wafv2_web_acl) | resource |
@@ -271,7 +271,7 @@ module "wafv2" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
+|------|-------------|------|---------|:--------:|
 | <a name="input_association_resource_arns"></a> [association\_resource\_arns](#input\_association\_resource\_arns) | REGIONAL only: ARNs of resources (e.g. ALBs) to associate this Web ACL with. For CloudFront, set web\_acl\_id on the distribution instead. | `list(string)` | `[]` | no |
 | <a name="input_attributes"></a> [attributes](#input\_attributes) | Additional attributes appended to the id (e.g. ["workers"]). | `list(string)` | `[]` | no |
 | <a name="input_cloudwatch_metrics_enabled"></a> [cloudwatch\_metrics\_enabled](#input\_cloudwatch\_metrics\_enabled) | Emit CloudWatch metrics for the Web ACL and each rule. | `bool` | `true` | no |
@@ -301,7 +301,7 @@ module "wafv2" {
 ## Outputs
 
 | Name | Description |
-| ---- | ----------- |
+|------|-------------|
 | <a name="output_ip_set_allow_arn"></a> [ip\_set\_allow\_arn](#output\_ip\_set\_allow\_arn) | ARN of the allow-list IP set (null if none). |
 | <a name="output_ip_set_block_arn"></a> [ip\_set\_block\_arn](#output\_ip\_set\_block\_arn) | ARN of the block-list IP set (null if none). |
 | <a name="output_logging_configuration_id"></a> [logging\_configuration\_id](#output\_logging\_configuration\_id) | ID of the Web ACL logging configuration (null if logging disabled). |

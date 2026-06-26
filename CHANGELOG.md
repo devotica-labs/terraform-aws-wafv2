@@ -8,6 +8,13 @@ Releases are cut automatically by `release-please` on merge to `main`,
 driven by Conventional Commit prefixes (`feat:` → minor, `fix:`/`docs:`/`chore:` → patch,
 `feat!:` or `BREAKING CHANGE:` footer → major).
 
+## 0.1.0 (2026-06-26)
+
+
+### Features
+
+* native AWS WAFv2 Web ACL module (fintech-hardened, cloudposse-standard) ([c77ea1e](https://github.com/devotica-labs/terraform-aws-wafv2/commit/c77ea1e799f6ba86e9dc2d176240b01f9579c06f))
+
 ## [Unreleased]
 
 ### Added

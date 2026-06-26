@@ -1,0 +1,50 @@
+#
+# Canonical configuration for README.md (cloudposse-style doc standard,
+# native to Devotica). Run `make readme` to regenerate the terraform-docs
+# section of README.md.
+#
+
+name: terraform-aws-wafv2
+license: APACHE2
+github_repo: devotica-labs/terraform-aws-wafv2
+
+badges:
+  - name: CI
+    image: https://github.com/devotica-labs/terraform-aws-wafv2/actions/workflows/ci.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-wafv2/actions/workflows/ci.yml
+  - name: Release
+    image: https://github.com/devotica-labs/terraform-aws-wafv2/actions/workflows/release.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-wafv2/actions/workflows/release.yml
+  - name: License
+    image: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+    url: LICENSE
+
+related:
+  - name: terraform-aws-alb
+    description: Public ALB this Web ACL attaches to (REGIONAL scope).
+    url: https://github.com/devotica-labs/terraform-aws-alb
+  - name: terraform-aws-cloudfront
+    description: CloudFront edge — set this Web ACL's ARN as the distribution web_acl_id.
+    url: https://github.com/devotica-labs
+
+description: |-
+  Terraform module for an AWS **WAFv2 Web ACL** — the public-edge web
+  application firewall. Ships a fintech baseline of AWS managed rule groups
+  (Common, KnownBadInputs, SQLi, IP reputation), a rate-based rule, optional IP
+  allow/block sets, geo-blocking, logging, and REGIONAL association (e.g. to an
+  ALB).
+
+introduction: |-
+  This module creates an [AWS WAFv2 Web ACL](https://docs.aws.amazon.com/waf/latest/developerguide/web-acl.html)
+  with an opinionated, fintech-safe default rule set, and attaches it to a
+  REGIONAL resource (ALB / API Gateway / AppSync) or exposes its ARN for a
+  CloudFront distribution. Rather than a pass-arbitrary-rules engine, it exposes
+  focused inputs for the rule types that matter at the edge: AWS managed rule
+  groups, a rate limit, IP allow/block sets, and geo match.
+
+usage: |-
+  See [`examples/complete`](examples/complete) for the full surface and
+  [`examples/basic`](examples/basic) for a managed-rules + rate-limit baseline
+  attached to an ALB.
+
+contributors: []

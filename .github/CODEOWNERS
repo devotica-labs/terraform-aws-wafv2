@@ -1,0 +1,17 @@
+# CODEOWNERS for terraform-aws-wafv2
+#
+# This module is the public-edge web application firewall — its rule set and
+# defaults are a security control. Security owns the resource + input surface.
+#
+# Per Module-Repo Plan v1.3 §16 governance.
+
+# Default: every change requires both teams to approve.
+*                          @devotica-labs/cloud-leads @devotica-labs/security
+
+# Security-primary: the Web ACL rules + inputs.
+/main.tf                   @devotica-labs/security @devotica-labs/cloud-leads
+/variables.tf              @devotica-labs/security @devotica-labs/cloud-leads
+
+# CI/CD pipelines.
+/.github/                  @devotica-labs/cloud-leads @devotica-labs/security
+/.github/workflows/        @devotica-labs/cloud-leads @devotica-labs/security
